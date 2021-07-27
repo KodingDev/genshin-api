@@ -35,3 +35,7 @@ dependencies {
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
 }
+
+task("stage") {
+    dependsOn("clean", "installDist")
+}
